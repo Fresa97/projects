@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block head %}Jefe de Núcleo|Nuevo{% endblock %}
+
+
+
+{% block headcontenct %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="/">INICIO</a>
+        </li>
+        <li>
+             <a href="/listadoJefeN">Jefe de Núcleo</a>
+        </li>
+        <li>
+             <a href="#">{{titulo}} de Núcleo</a>
+        </li>
+    </ul>
+    {% endblock %}
+
+{% block contect %}
+
+    <div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-user"></i> Jefe de Núcleo</h2>
+
+                <div class="box-icon">
+                    
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+
+                </div>
+
+            </div>
+
+            
+                <div class="form-actions">
+                  <form class="form-horizontal tablas" method="POST" action=''>{% csrf_token %}
+                            {% csrf_token %}
+                                
+                               <table>
+                                    <tr>
+                                        <td class="col-lg-7 ">
+                                            <div class="control-group">
+                                               <strong><label class="control-label">Ocupación</label></strong>
+                                               <div class="controls">  {{form.ocupacion}}</div>
+                                            </div>
+                                            
+                                            <div class="control-group">
+                                                <strong><label class="control-label"">Edad</label></strong>
+                                                <div class="controls">{{form.edad}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label"">Integrante</label></strong>
+                                                <div class="controls">{{form.integrante}}</div>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+
+                                <td class="col-lg-7 ">
+                                    <div class="box-content row">
+                                        <div class="form-actions">
+                                            
+                                            <button style="background: #c1f6bf;padding: 5px 20px " type="submit" class="btn glyphicon glyphicon-ok" > Aceptar </button>
+                                            <a style="background:indianred;padding: 5px 10px" href="/listadoJefeN" class="btn glyphicon glyphicon-remove btn-danger icon-reply"> Cancelar</a>
+                                        </div>
+                                    </div>
+                                     </td>
+                                        </table>
+
+                                
+                        </form>    
+            
+        </div>
+        
+    </div>
+    <!--/span-->
+
+    </div><!--/row-->
+</div>
+
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block head %}Ubicación de Delegados{% endblock %}
+
+
+{% block headcontenct %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="/">INICIO</a>
+        </li>
+        <li>
+            <a href="/listadoDelegado">Delegados</a>
+        </li>
+        <li>
+            <a href="#">Ubicación de Delegados</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block contect %}
+
+    <div class="row">
+        <div class="box col-md-12">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2><i class="glyphicon glyphicon-map-marker"></i>Ubicación de Delegados</h2>
+
+                    <div class="box-icon">
+
+                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                class="glyphicon glyphicon-chevron-up"></i></a>
+                        <a href="#" class="btn btn-close btn-round btn-default"><i
+                                class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="form-actions">
+                        <form method="POST" action="">{% csrf_token %}
+                            <label>Seleccione el delegado: </label>
+
+                            <select name="deleg">
+                                <option></option>
+                            {% for pr in d %}
+                                <option value="{{ pr.nombreDelegado }}">
+                                    {{ pr.nombreDelegado }}
+                                </option>
+                            {% endfor %}
+
+
+{#                                <option>Pinar de Rio</option>#}
+{#                                <option>Artemisa</option>#}
+{#                                <option>La Habana</option>#}
+{#                                <option>Mayabeque</option>#}
+{#                                <option>Matanzas</option>#}
+{#                                <option>Cienfuegos</option>#}
+{#                                <option>Villa Clara</option>#}
+{#                                <option>Sancti Spíritus</option>#}
+{#                                <option>Ciego de Ávila</option>#}
+{#                                <option>Camagüey</option>#}
+{#                                <option>Las Tunas</option>#}
+{#                                <option>Granma</option>#}
+{#                                <option>Holguín</option>#}
+{#                                <option>Santiago de Cuba</option>#}
+{#                                <option>Guantánamo</option>#}
+{#                                <option>Isla de la Juventud</option>#}
+
+
+                            </select>
+
+                            <input type="submit" type="submit" value="Buscar">
+                        </form>
+
+                        <div class="clearfix"></div>
+                        <br>
+                        <div class="table-responsive table">
+
+                            <table class="table table-striped table-bordered bootstrap-datatable datatable responsive tablas">
+
+                                <thead>
+                                <tr>
+
+                                    <th>Nombre</th>
+                                    <th>Fecha de Ingreso a la UJC</th>
+                                    <th>Dirección</th>
+                                    <th>Provincia</th>
+                                    <th>Casa</th>
+
+                                </tr>
+
+                                </thead>
+
+                                    <tbody>
+
+                                        {% for delegado in listado %}
+                                            <tr>
+
+                                                <td>{{ delegado.nombreDelegado }}</td>
+                                                <td>{{ delegado.fechaIngresoUjc }}</td>
+                                                <td>{{ delegado.direccion }}</td>
+                                                <td>{{ delegado.provincia }}</td>
+                                                <td>{{ delegado.casa }}</td>
+
+                                            </tr>
+                                        {% endfor %}
+
+                                    </tbody>
+
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+
+        </div><!--/row-->
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block head %}Provincias/Nuevo{% endblock %}
+
+    {% block contect %}
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+            <div class="row">
+                <div class="box col-md-12">
+                     <div class="box-inner">
+                        <div class="box-header well">
+                            <h2><i class="glyphicon glyphicon-info-sign"></i> Nueva Provincia</h2>
+
+                        </div>
+                        <div class="box-content row">
+                            {% if form %}
+                           <form class="form-horizontal tablas" method="POST" action=''>{% csrf_token %}
+                                <div class="col-lg-7 col-md-12">
+                                    {{form.as_p}}
+<!-- <input type="submit" value="Añadir Provincia"> -->
+
+                                    <div class="box-content row">
+                                        <div class="form-actions">
+                                            <a style="background:indianred;padding: 5px 10px" href="/listadoProvincia" class="btn btn-default btn-danger icon-reply">Cancelar</a>
+                                            <button style="background: lightgreen;padding: 5px 20px " type="submit" class="btn icon-ok" > Añadir </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+{% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+

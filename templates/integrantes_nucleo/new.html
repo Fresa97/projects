@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block head %}Integrantes del Núcleo|Nuevo{% endblock %}
+
+
+
+
+
+{% block headcontenct %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="/">INICIO</a>
+        </li>
+        <li>
+             <a href="/listadoIntegrantes">Integrante del Núcleo</a>
+        </li>
+        <li>
+             <a href="#">{{titulo}}</a>
+        </li>
+    </ul>
+    {% endblock %}
+
+{% block contect %}
+
+    <div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-user"></i> Integrante del Núcleo</h2>
+
+                <div class="box-icon">
+                    
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+
+                </div>
+
+            </div>
+
+            
+                <div class="form-actions">
+                  <form class="form-horizontal tablas" method="POST" action=''>{% csrf_token %}
+                            {% csrf_token %}
+                                
+                                <table>
+                                    <tr>
+                                        <td class="col-lg-7 ">
+                                            <div class="control-group">
+                                               <strong><label class="control-label">Nombre</label></strong>
+                                               <div class="controls">  {{form.nombre}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                               <strong><label class="control-label">Sexo</label></strong>
+                                               <div class="controls">  {{form.sexo}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label"">Fecha de Nacimiento</label></strong>
+                                                <div class="controls">{{form.fechaNac}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label" ">Casa</label></strong>
+                                                <div class="controls">{{form.casa}}</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                <td class="col-lg-7 ">
+                                    <div class="box-content row">
+                                        <div class="form-actions">
+                                            
+                                            <button style="background: #c1f6bf;padding: 5px 20px " type="submit" class="btn glyphicon glyphicon-ok" > Aceptar </button>
+
+                                            <a style="background:indianred;padding: 5px 10px" href="/listadoIntegrantes" class="btn glyphicon glyphicon-remove btn-danger icon-reply">Cancelar</a>
+                                        </div>
+                                    </div>
+                                     </td>
+                                        </table>
+
+                                
+                        </form>    
+            
+        </div>
+        
+    </div>
+    <!--/span-->
+
+    </div><!--/row-->
+</div>
+
+{% endblock %}
+

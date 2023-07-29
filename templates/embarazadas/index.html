@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block head %}Embarazadas{% endblock %}
+
+
+{% block headcontenct %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="/">INICIO</a>
+        </li>
+        <li>
+            <a href="#">Embarazadas</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block contect %}
+
+    <div class="row">
+        <div class="box col-md-12">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2><i class="glyphicon glyphicon-user"></i> Listado de Embarazadas</h2>
+
+                    <div class="box-icon">
+
+                        <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                class="glyphicon glyphicon-chevron-up"></i></a>
+                        <a href="#" class="btn btn-close btn-round btn-default"><i
+                                class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="form-actions">
+                        {% if user.is_authenticated %}
+                            <a style="background:#c1f6bf;padding: 5px 10px" href="/embarazadasInsertar"
+                               class="btn btn-default glyphicon glyphicon-plus"> Nueva Embarazada</a>
+                        {% else %}
+                        {% endif %}
+                        <div class="clearfix"></div>
+                        <br>
+                        <div class="table-responsive table">
+
+                            <table class="table table-striped table-bordered bootstrap-datatable datatable responsive tablas">
+                                <thead>
+                                <tr>
+                                    {% if user.is_authenticated %}
+                                        <th></th>
+                                    {% else %}
+                                    {% endif %}
+                                    <th>Nombre</th>
+                                    <th>Edad</th>
+                                    <th>Sexo</th>
+                                    <th>Teléfono</th>
+                                    <th>Dirección</th>
+                                    <th>Fecha de ingreso a la UJC</th>
+                                    <th>Responsabilidad</th>
+                                    <th>Centro de trabajo/estudio</th>
+                                    <th>Limitación</th>
+                                    <th>Provincia</th>
+                                    <th>Escolaridad</th>
+                                    <th>Casa</th>
+                                    <th>Posible Fecha de Parto</th>
+
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for delegado in listado %}
+                                    <tr>
+                                        {% if user.is_authenticated %}
+                                        <td class="center">
+
+                                            <a class="" style="color: green"
+                                               href="{% url 'editar_Embarazada' delegado.id %}">
+                                                <i class="glyphicon glyphicon-edit icon-white"></i>
+
+                                            </a>
+                                            </br>
+                                            <a class="" style="color: red"
+                                               href="{% url 'eliminar_Embarazada' delegado.id %}">
+                                                <i class="glyphicon glyphicon-trash icon-white"></i>
+
+                                            </a>
+                                        </td>
+                                        {% else %}
+                                        {% endif %}
+                                        <td>{{ delegado.nombreDelegado }}</td>
+                                        <td>{{ delegado.edad }}</td>
+                                        <td>{{ delegado.sexo }}</td>
+                                        <td>{{ delegado.telefono }}</td>
+                                        <td>{{ delegado.direccion }}</td>
+                                        <td>{{ delegado.fechaIngresoUjc }}</td>
+                                        <td>{{ delegado.responsabilidad }}</td>
+                                        <td>{{ delegado.centroTrabajo }}</td>
+                                        <td>{{ delegado.limitacion }}</td>
+                                        <td>{{ delegado.provincia }}</td>
+                                        <td>{{ delegado.escolaridad }}</td>
+                                        <td>{{ delegado.casa }}</td>
+                                        <td>{{ delegado.posibleFechaDeParto }}</td>
+
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+
+        </div><!--/row-->
+    </div>
+
+{% endblock %}
+
+
+
+
+

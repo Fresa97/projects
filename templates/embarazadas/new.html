@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block head %}Embarazada|Nuevo{% endblock %}
+
+ 
+
+
+{% block headcontenct %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="/">INICIO</a>
+        </li>
+        <li>
+             <a href="/listadoEmbarazadas">Embarazadas</a>
+        </li>
+        <li>
+             <a href="#">{{titulo}}</a>
+        </li>
+    </ul>
+    {% endblock %}
+
+{% block contect %}
+
+    <div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-user"></i> Embarazada</h2>
+
+                <div class="box-icon">
+                    
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+
+                </div>
+
+            </div>
+
+            
+                <div class="form-actions">
+                  <form class="form-horizontal tablas" method="POST" action=''>{% csrf_token %}
+                            {% csrf_token %}
+                                
+                                <table>
+                                    <tr>
+                                        <td class="col-lg-7 ">
+                                            <div class="control-group">
+                                               <strong><label class="control-label">Nombre</label></strong>
+                                               <div class="controls">  {{form.nombreDelegado}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label"">Edad</label></strong>
+                                                <div class="controls">{{form.edad}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label" ">Sexo</label></strong>
+                                                <div class="controls">{{form.sexo}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label">Teléfono</label></strong>
+                                                <div class="controls">{{form.telefono}}</div>
+                                            </div>
+                                        </td>
+                                             <td class="col-lg-7 ">
+                                            <div class="control-group">
+                                                <strong><label class="control-label" for="{{ form.direccion.vars.id }}">Dirección</label></strong>
+                                                <div class="controls"> {{form.direccion}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label">Fecha de Ingreso a la UJC</label></strong>
+                                                <div class="controls">{{form.fechaIngresoUjc}}</div>
+                                            </div>
+
+                                        
+                                       
+                                            <div class="control-group">
+                                                <strong><label class="control-label">Responsabilidad</label></strong>
+                                                <div class="controls"> {{form.responsabilidad}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label">Centro de Trabajo o Estutio</label></strong>
+                                                <div class="controls"> {{form.centroTrabajo}}</div>
+                                            </div>
+                                            <td>
+                                            <td class="col-lg-7 ">
+                                            <div class="control-group">
+                                                <strong><label class="control-label">Limitación</label></strong>
+                                                <div class="controls">{{form.limitacion }}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label">Provincia</label></strong>
+                                                <div class="controls"> {{form.provincia}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label">Casa</label></strong>
+                                                <div class="controls">{{form.casa}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label"">Escolaridad</label></strong>
+                                                <div class="controls"> {{form.escolaridad}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label"">Posible Fecha de Parto</label></strong>
+                                                <div class="controls"> {{form.posibleFechaDeParto}}</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                <td class="col-lg-7 ">
+                                    <div class="box-content row">
+                                        <div class="form-actions">
+                                            
+                                            <button style="background: #c1f6bf;padding: 5px 20px " type="submit" class="btn glyphicon glyphicon-ok" > Aceptar </button>
+                                            <a style="background:indianred;padding: 5px 10px" href="/listadoEmbarazadas" class="btn glyphicon glyphicon-remove btn-danger icon-reply">Cancelar</a>
+                                        </div>
+                                    </div>
+                                     </td>
+                                        </table>
+
+                                
+                        </form>    
+            
+        </div>
+        
+    </div>
+    <!--/span-->
+
+    </div><!--/row-->
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block head %}Es|Nuevo{% endblock %}
+
+    {% block contect %}
+    <div id="content" class="col-lg-10 col-sm-10">
+        <!-- content starts -->
+        <div class="row">
+            <div class="box col-md-12">
+                <div class="box-inner">
+                    <div class="box-header well">
+                        <h2><i class="glyphicon glyphicon-info-sign"></i> Nueva Casa</h2>
+
+                    </div>
+                    <div class="box-content row">
+                        <form class="form-horizontal tablas" method="POST" action=''>{% csrf_token %}
+                            {% csrf_token %}
+                                <div class="col-lg-7 col-md-12">
+                                <table>
+                                    <tr>
+                                        <td class="col-lg-7 ">
+                                            <div class="control-group">
+                                               <strong><label class="control-label">Tipo de Escolaridad</label></strong>
+                                               <div class="controls">  {{form.tipoescolaridad}}</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                <td class="col-lg-7 ">
+                                    <div class="box-content row">
+                                        <div class="form-actions">
+                                            <a style="background:indianred;padding: 5px 10px" href="/listadoCasa" class="btn glyphicon glyphicon-remove btn-danger icon-reply"> Cancelar</a>
+                                            <button style="background: #c1f6bf;padding: 5px 20px " type="submit" class="btn glyphicon glyphicon-ok" > Editar </button>
+                                        </div>
+                                    </div>
+                                     </td>
+                                        </table>
+
+                                </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+    

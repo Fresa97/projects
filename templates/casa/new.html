@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block head %}Casa|Nuevo{% endblock %}
+
+
+
+{% block headcontenct %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="/">INICIO</a>
+        </li>
+        <li>
+             <a href="/listadoCasa">Casa</a>
+        </li>
+        <li>
+             <a href="#">{{titulo}}</a>
+        </li>
+    </ul>
+    {% endblock %}
+
+{% block contect %}
+
+    <div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-home"></i> Casa</h2>
+
+                <div class="box-icon">
+
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+
+                </div>
+
+            </div>
+
+
+
+                  <form class="form-horizontal tablas" method="POST" action=''>{% csrf_token %}
+                            {% csrf_token %}
+
+                                <table>
+                                    <tr>
+                                        <td class="col-lg-7 ">
+                                            <div class="control-group">
+                                               <strong><label class="control-label">Dirección</label></strong>
+                                               <div class="controls">  {{form.direccion}}</div>
+                                            </div>
+                                            <div class="control-group">
+                                                <strong><label class="control-label">Cantidad de Delegados</label></strong>
+                                                <div class="controls">{{form.cantDelegados}}</div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                <td class="col-lg-7 ">
+                                    <div class="box-content row">
+                                        <div class="form-actions">
+                                            <button style="background: #c1f6bf;padding: 5px 20px " type="submit" class="btn glyphicon glyphicon-ok" > Aceptar </button>
+                                            <a style="background:indianred;padding: 5px 10px" href="/listadoCasa" class="btn glyphicon glyphicon-remove btn-danger icon-reply"> Cancelar</a>
+
+                                        </div>
+                                    </div>
+                                     </td>
+                                        </table>
+
+
+                        </form>
+
+
+
+    </div>
+    <!--/span-->
+
+    </div><!--/row-->
+</div>
+
+{% endblock %}
+
+
+
+
+

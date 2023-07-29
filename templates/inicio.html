@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head %}Inicio{% endblock %}
+
+{% block contect %}
+<h1>{{titulo_template}}</h1>
+
+{% if form %}
+<form method="POST" action=''>{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Añadir Provincia">
+</form>
+{% endif %}
+{% endblock %}

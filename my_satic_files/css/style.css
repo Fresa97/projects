@@ -1,0 +1,92 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+.cabecera-up{
+	margin-left:68%;
+	margin-right:45%;
+	padding-top: 10px;
+}
+
+body{
+	padding:0;
+	margin:0;
+	font-family: 'Lato', sans-serif;
+	background:#fff;
+}
+body a{
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+input[type="button"],input[type="submit"]{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+h1,h2,h3,h4,h5,h6{
+	margin:0;			   
+}
+a{
+	border-top-right-radius: 9px;
+	border-bottom-right-radius: 9px;
+}
+h3{
+	color: #c0c0c0;
+	font-size: 40px;
+	font-weight: 900;
+	text-align: center;
+}
+
+.texto{
+	padding-top:150px
+}
+p{
+	font-size: 25px;
+	color: #c0c0c0;
+	text-align: center;
+}
+ul{
+	margin:0;
+	padding:0;
+}
+label{
+	margin:0;
+}
+/*-----start-header----*/
+.header {
+	background: url('../img/banner.jpg') no-repeat 0px 0px;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	-ms-background-size:cover;
+	min-height:820px;
+	background-position: 100%100%;
+}
+a {
+	text-decoration:none;
+	color:black;
+	padding:15px 23px;
+	margin-left:43%;
+	margin-right:45%;
+	font-size:1.3em;
+	font-weight:400;
+	text-transform:uppercase;
+	border-radius:6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-o-border-radius: 6px;
+	-ms-border-radius: 6px;
+	background: #c0c0c0;
+	background-position: 50%50%;
+}
+.buton{
+	padding-top:50px
+}

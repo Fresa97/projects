@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block head %}Delegados Limitados{% endblock %}
+
+
+
+{% block headcontenct %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="/">INICIO</a>
+        </li>
+        <li>
+             <a href="/listadoDelegado">Delegados</a>
+        </li>
+        <li>
+             <a href="#">Limitados</a>
+        </li>
+    </ul>
+    {% endblock %}
+
+{% block contect %}
+
+    <div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-user"></i> Listado de Delegados Limitados Físicos</h2>
+
+                <div class="box-icon">
+                    
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="form-actions">
+                        
+            <div class="clearfix"></div><br>
+            <div class="table-responsive table">
+
+                <table class="table table-striped table-bordered bootstrap-datatable datatable responsive tablas">
+                   
+                    <thead>
+                        <tr>
+
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Sexo</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Limitación</th>
+                            <th>Provincia</th>
+                            <th>Escolaridad</th>
+                            <th>Casa</th>
+
+                            
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for delegado in listado %}
+                            <tr>
+
+                                <td>{{ delegado.nombreDelegado }}</td>
+                                <td>{{ delegado.edad }}</td>
+                                <td>{{ delegado.sexo }}</td>
+                                <td>{{ delegado.telefono }}</td>
+                                <td>{{ delegado.direccion }}</td>
+                                <td>{{ delegado.limitacion }}</td>
+                                <td>{{ delegado.provincia }}</td>
+                                <td>{{ delegado.escolaridad }}</td>
+                                <td>{{ delegado.casa }}</td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--/span-->
+
+    </div><!--/row-->
+</div>
+
+{% endblock %}
